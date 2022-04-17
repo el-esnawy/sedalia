@@ -4,6 +4,7 @@ import LoginContainer from "../containers/LoginContainer";
 import { useTheme } from "@emotion/react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import LoadingOverlay from "../components/LoadingOverlay";
 
 const LoginPrompt = () => {
   const theme = useTheme();
@@ -37,6 +38,7 @@ const LoginPrompt = () => {
 const LoginPage = () => {
   const { user } = useSelector((state) => state);
 
+  if (user.loading) return <LoadingOverlay />;
   return (
     <Container
       sx={{
