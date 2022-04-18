@@ -17,7 +17,7 @@ const MyDataGrid = styled(DataGrid)(({ theme }) => ({
     backgroundColor: theme.palette.customBackgroundColor,
   },
   "& .MuiDataGrid-row:nth-of-type(even)": {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: "lightblue",
   },
 }));
 

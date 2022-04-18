@@ -19,9 +19,11 @@ const orderSlice = createSlice({
       return { ...state, loading: true, error: false, errorMessage: "" };
     },
     [getAllOrders.rejected]: (state, action) => {
-      const [errorMessages] = action.payload;
-      const { messages } = errorMessages;
-      return { ...state, loading: false, error: true, errorMessage: messages[0].message };
+      console.log(action);
+      // console.log(action.payload);
+      // const [errorMessages] = action.payload;
+      // const { messages } = errorMessages;
+      // return { ...state, loading: false, error: true, errorMessage: messages[0].message };
     },
   },
 });

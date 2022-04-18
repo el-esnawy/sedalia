@@ -12,6 +12,7 @@ import { Box } from "@mui/system";
 
 const ItemRequest = () => {
   const pageSize = 11;
+
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const { requests, loading } = useSelector((state) => state.items);
@@ -121,7 +122,7 @@ const ItemRequest = () => {
       maxWidth="xl"
       sx={{ minHeight: "766px", display: "flex", justifyContent: "center", flexDirection: "column", gap: 2 }}>
       <Typography variant="h3" textAlign="center" sx={{ fontWeight: "bold", color: "white" }}>
-        All Item Requests
+        All Items
       </Typography>
       <CustomDataGrid
         columns={columns}

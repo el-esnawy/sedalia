@@ -7,6 +7,7 @@ import { Stack, Tab, Tabs, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useTheme } from "@emotion/react";
+import OrdersPanel from "../components/OrdersPanel";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -58,7 +59,7 @@ const AdminDashboard = () => {
     <Stack sx={{ width: "100%", position: "relative" }}>
       <CustomTabs value={value} onChange={handleTabChange} component={"div"}>
         <Tab
-          label="Item Requests"
+          label="Items"
           {...a11yProps(0)}
           style={{
             width: "50%",
@@ -80,10 +81,14 @@ const AdminDashboard = () => {
       </CustomTabs>
       <Box sx={{ height: "100%" }}>
         <TabPanel value={value} index={0} component={"div"}>
-          <ItemRequest />
+          <Box sx={{ height: "80vh" }}>
+            <ItemRequest />
+          </Box>
         </TabPanel>
         <TabPanel value={value} index={1} component={"div"}>
-          <ItemRequest />
+          <Box sx={{ height: "80vh" }}>
+            <OrdersPanel />
+          </Box>
         </TabPanel>
       </Box>
     </Stack>
